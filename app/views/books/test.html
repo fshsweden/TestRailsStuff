@@ -1,0 +1,136 @@
+<form accept-charset="UTF-8" action="/authors/1" class="simple_form edit_author" id="edit_author_1" method="post">
+
+	<div style="margin:0;padding:0;display:inline">
+
+		<input name="utf8"
+	         type="hidden"
+	         value="&#x2713;"/><input name="_method"
+	         type="hidden"
+	         value="put"/>
+
+		<input name="authenticity_token"
+	         type="hidden"
+	         value="kqsPQaNpIiM7ooE/o43e0zdP6EleuFGQVXm+Aegi1AU="/>
+	</div>
+
+	<div class="input string optional author_name">
+			<label  class="string optional" for="author_name">Name</label>
+			<input  class="string optional"
+							id="author_name"
+							maxlength="255"
+							name="author[name]"
+							size="50"
+							type="text"
+							value="Peter Andersson"/>
+	</div>
+
+	<br/>
+
+	<div class="input integer optional author_born">
+
+			<label class="integer optional" for="author_born">Born</label>
+
+			<input  class="numeric integer optional"
+							id="author_born"
+							name="author[born]"
+							step="1"
+							type="number"
+							value="1963"/>
+	</div>
+
+	<br/>
+
+	<h1>Books by this author</h1>
+	<h4>render @author.books, :locals => {f : author_form } %></h4>
+
+
+
+
+	<div class="input string optional author_books_title">
+
+		<label  class="string optional" for="author_books_attributes_0_title">Title</label>
+
+		<input  class="string optional"
+						id="author_books_attributes_0_title"
+						maxlength="255"
+						name="author[books_attributes][0][title]"
+						size="50"
+						type="text"
+						value="Hej Världen, del 2"/>
+
+	</div>
+
+	<br/>
+
+	<div class="input integer optional author_books_pages">
+
+		<label  class="integer optional" for="author_books_attributes_0_pages">Pages</label>
+
+		<input  class="numeric integer optional"
+						id="author_books_attributes_0_pages"
+						name="author[books_attributes][0][pages]"
+						step="1"
+						type="number"
+						value="789"/>
+	</div>
+
+	<br/>
+
+	<input    id="author_books_attributes_0_id"
+	          name="author[books_attributes][0][id]"
+	          type="hidden"
+	          value="1"/>
+
+
+
+
+
+
+
+
+	<div class="input string optional author_books_title">
+
+		<label class="string optional" for="author_books_attributes_1_title">Title</label>
+
+		<input  class="string optional"
+						id="author_books_attributes_1_title"
+						maxlength="255"
+						name="author[books_attributes][1][title]"
+						size="50"
+						type="text"
+						value="Hello, World"/>
+
+	</div>
+
+	<br/>
+
+	<div  class="input integer optional author_books_pages">
+
+		<label  class="integer optional" for="author_books_attributes_1_pages">Pages</label>
+
+		<input  class="numeric integer optional"
+						id="author_books_attributes_1_pages"
+						name="author[books_attributes][1][pages]"
+						step="1"
+						type="number"
+						value="888"/>
+	</div>
+
+	<br/>
+
+	<input  id="author_books_attributes_1_id"
+	        name="author[books_attributes][1][id]"
+	        type="hidden"
+	        value="2"/>
+
+
+
+
+
+
+
+	<input  name="commit"
+					type="submit"
+					value="Update Author"/>
+
+</form>

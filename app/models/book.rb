@@ -1,0 +1,6 @@
+class Book < ActiveRecord::Base
+  belongs_to :author
+  attr_accessible :pages, :title, :author_id, :cover
+
+  has_attached_file :cover
+end

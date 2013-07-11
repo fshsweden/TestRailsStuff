@@ -1,0 +1,11 @@
+<h1>BOOKS/BOOK PARTIAL</h1>
+
+<%= af.fields_for :books do |book_fields| %>
+
+  <%= book_fields.input :title %>
+  <br />
+  <%= book_fields.input :pages %>
+  <br />
+
+<% end %>
+
