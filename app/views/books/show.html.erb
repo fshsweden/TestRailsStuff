@@ -12,7 +12,7 @@
 
 <p>
   <b>Author:</b>
-  <%= @book.author %>
+  <%= @book.author.name %>  <%= link_to "Show all books by author", author_path(@book.author) %>
 </p>
 
 

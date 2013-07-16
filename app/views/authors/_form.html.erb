@@ -1,8 +1,8 @@
 <%= simple_form_for(@author) do |author_form| %>
+
   <% if @author.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:</h2>
-
       <ul>
       <% @author.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -16,16 +16,15 @@
 
 	<h1>Books by this author</h1>
 
-
-
-  <%= author_form.fields_for :books do |book_fields| %>
-
-    <%= render partial: "book_fields", locals: {f: book_fields} %>
-
+	<!-- will Assume @author.books (somehow...) -->
+  <%= author_form.simple_fields_for :books do |book_fields| %>
+    <%= render partial: "book_fields", locals: {
+		    f:book_fields,
+		    show_destroy:true
+    } %>
   <% end %>
 
   <%= link_to_add_fields "Add Book", author_form, :books %>
-
   <%= author_form.submit %>
 
 <% end %>

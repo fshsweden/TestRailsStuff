@@ -1,0 +1,56 @@
+<div id="container">
+  <h1>upload a book to Author: Peter Andersson !</h1>
+
+  <form accept-charset="UTF-8" action="/authors/1" class="simple_form edit_author" id="edit_author_1" method="post">
+
+    <div style="margin:0;padding:0;display:inline">
+      <input name="utf8" type="hidden" value="&#x2713;"/>
+      <input name="_method" type="hidden" value="put"/>'
+      <input name="authenticity_token" type="hidden" value="kqsPQaNpIiM7ooE/o43e0zdP6EleuFGQVXm+Aegi1AU="/>
+    </div>
+
+    <div class="input string optional author_name">
+      <label class="string optional" for="author_name">Name</label>
+      <input class="string optional" id="author_name" maxlength="255" name="author[name]" size="50" type="text" value="Peter Andersson"/>
+    </div>
+
+    <br/>
+
+    <div class="input integer optional author_born">
+      <label class="integer optional" for="author_born">Born</label>
+      <input class="numeric integer optional" id="author_born" name="author[born]" step="1" type="number" value="1963"/>
+    </div>
+
+    <br/>
+
+    <form accept-charset="UTF-8" action="/books" class="simple_form new_book" enctype="multipart/form-data" id="new_book" method="post">
+      <div style="margin:0;padding:0;display:inline">
+        <input name="utf8" type="hidden" value="&#x2713;"/>
+        <input name="authenticity_token" type="hidden" value="kqsPQaNpIiM7ooE/o43e0zdP6EleuFGQVXm+Aegi1AU="/>
+      </div>
+      <fieldset class="book">
+        <div class="input string optional book_title">
+          <label class="string optional" for="book_title">Title</label>
+          <input class="string optional" id="book_title" maxlength="255" name="book[title]" size="50" type="text"/>
+        </div>
+        <br/>
+        <div class="input integer optional book_pages">
+          <label class="integer optional" for="book_pages">Pages</label>
+          <input class="numeric integer optional" id="book_pages" name="book[pages]" step="1" type="number"/>
+        </div>
+        <br/>
+        <!-- we specify the new custom input, and we'll use the 'thumb' version of the carrierwave upload -->
+        <div class="cover">
+          <div class="input image_preview optional book_cover">
+            <label class="image_preview optional" for="book_cover">Välj bild</label>
+            <input class="image_preview optional" id="book_cover" name="book[cover]" type="file"/></div>
+        </div>
+        <input id="book__destroy" name="book[_destroy]" type="hidden" value="false"/>
+        <a href="#" class="remove_fields">remove</a>
+        <!-- alternative method --><!-- %= f.check_box :_destroy % --><!-- %= f.label :_destroy, "remove" % -->
+      </fieldset>
+    </form>
+    <input name="commit" type="submit" value="Update Author"/>
+  </form>
+
+</div>

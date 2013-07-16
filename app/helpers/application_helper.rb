@@ -1,4 +1,7 @@
 module ApplicationHelper
+
+  #
+
   def link_to_add_fields(name, f, association)
 
     # Create a new object the safe way
@@ -8,7 +11,7 @@ module ApplicationHelper
 
     # make lots of "photo_fields" for ":photos" association
     fields = f.fields_for(association, new_object, child_index: id) do |builder|
-      render(association.to_s.singularize + "_fields", f: builder)
+      render(association.to_s.singularize + "_fields", {f: builder, show_destroy:true})
     end
 
     # link to nothing! but Javascript function in form_helper.js will catch the call and use the DATA
@@ -21,4 +24,5 @@ module ApplicationHelper
             }
     )
   end
+
 end

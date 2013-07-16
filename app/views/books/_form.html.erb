@@ -20,8 +20,11 @@
     <%= f.number_field :pages %>
   </div>
 
-	<!-- Note: we want to set author_id on @book -->
-  <%= collection_select(:book, :author_id, Author.all, :id, :name) %>
+  <div class="field">
+		<!-- Note: we want to set author_id on @book -->
+    <%= f.label :author %><br />
+	  <%= collection_select(:book, :author_id, Author.all, :id, :name) %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

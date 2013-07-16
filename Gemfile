@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
 gem 'simple_form'
 gem 'paperclip'
 gem 'thin'  # Using this gem solves: "WARN  Could not determine content-length of response body....."  etc in log file
+gem 'awesome_print'
+gem 'nifty-generators'
 
 group :development do
   gem 'sqlite3'

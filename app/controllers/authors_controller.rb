@@ -80,4 +80,26 @@ class AuthorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+
+
+
+  ########## NON REST STUFF HERE ##################
+
+  def upload_single_book
+
+    @author = Author.find(params[:id])
+    @book = @author.books.build
+
+    if (@author)
+
+    else
+      redirect_to authors_url, notice: 'No Author ID given.'
+    end
+
+    #show upload_single_book.html.erbend
+  end
+
 end

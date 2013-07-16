@@ -1,6 +1,21 @@
-<h1> BOOK_FIELDS PARTIAL</h1>
+<fieldset class="book">
 
-<%= f.input :title %>
-<br />
-<%= f.input :pages %>
-<br />
+  <!-- we specify the new custom input, and we'll use the 'thumb' version of the paperclip upload -->
+  <%= f.input :cover, as: :image_preview, label: false, wrapper_html: { class: 'cover'} %>
+	<%= f.input :title, wrapper_html: { class: 'field'} %>
+	<%= f.input :pages, wrapper_html: { class: 'field'} %>
+
+
+	<% if (show_destroy)  %>
+		<%= f.hidden_field :_destroy %>
+		<%= link_to "remove", '#', class: "remove_fields" %>
+  <% end  %>
+
+	<!-- alternative method -->
+  <!-- %= f.check_box :_destroy % -->
+  <!-- %= f.label :_destroy, "remove" % -->
+
+</fieldset>
+
+
+
